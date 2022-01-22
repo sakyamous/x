@@ -1,0 +1,173 @@
+
+  <div class="page">
+    <div class="toolbar tabbar no-shadow toolbar-bottom-md tabbar-labels">
+      <div class="toolbar-inner">
+       <a href="/dashboard/" class="tab-link">
+          <i class="icon material-icons">home</i>
+          <span class="tabbar-label">Home</span>
+        </a>
+        <a href="/features/" class="tab-link">
+          <i class="material-icons">star</i>
+          <span class="tabbar-label">Features</span>
+        </a>
+        <a href="/page/" class="tab-link">
+          <i class="icon material-icons">favorite</i>
+          <span class="tabbar-label">Pages</span>
+        </a>
+        <a href="/search-page/" class="tab-link">
+          <i class="icon material-icons">search</i>
+          <span class="tabbar-label">Search</span>
+        </a>
+        <a href="/settings/" class="tab-link tab-link-active">
+          <i class="icon material-icons">settings</i>
+          <span class="tabbar-label">Settings</span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar no-shadow">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Settings</div>
+      </div>
+    </div>
+    <div class="page-content settings">
+      <!-- Start Content -->
+      <div class="block">
+        <div class="row">
+          <div class="col-100 medium-50">
+            <div class="card">
+              <div class="card-content card-content-padding">
+                <h2>Settings</h2>
+                <span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Commodi in soluta laborum placeat delectus praesentium magnam, minima esse possimus nesciunt suscipit.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content-1">
+          <div class="col-100 medium-50">
+            <a href="" class="popup-open" data-popup=".demo-popup">
+              <button class="btn-setting">Settings</button>
+            </a>
+          </div>
+        </div>
+        <div class="row" style="margin-top:25px">
+          <div class="col-100 medium-50">
+            <div class="card">
+              <div class="card-content card-content-padding">
+                <h2>Edit your profile</h2>
+                <span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Commodi in soluta laborum placeat delectus praesentium magnam, minima esse possimus nesciunt suscipit.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:25px">
+          <div class="col-100 medium-50">
+            <div class="card">
+              <div class="card-content card-content-padding">
+                <h2>Upload your image</h2>
+                <span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Commodi in soluta laborum placeat delectus praesentium magnam, minima esse possimus nesciunt suscipit.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Content -->
+    </div>
+    <div class="popup demo-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title">Settings</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="material-icons">clear</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+            <div class="row row-toggle">
+            <div class="col-100 medium-50">
+              <div class="card">
+                <div class="card-content card-content-padding">
+                  <div class="list simple-list content-2">
+                    <ul>
+                      <li>
+                        <i class="material-icons">wb_incandescent</i>
+                         <span>Dark View</span>
+                         <label class="toggle toggle-init">
+                         <input type="checkbox" checked>
+                         <span class="toggle-icon"></span>
+                         </label>
+                      </li>
+                      <li>
+                        <i class="material-icons">mail</i>
+                         <span>Newsletter</span>
+                         <label class="toggle toggle-init color-red">
+                         <input type="checkbox" checked>
+                         <span class="toggle-icon"></span>
+                         </label>
+                      </li>
+                      <li>
+                        <i class="material-icons">vpn_key</i>
+                         <span>2 Factor</span>
+                         <label class="toggle toggle-init color-green">
+                         <input type="checkbox" checked>
+                         <span class="toggle-icon"></span>
+                         </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  return {
+    methods: {
+      createPopup: function () {
+        var self = this;
+        // Create popup
+        if (!self.popup) {
+          self.popup = self.$app.popup.create({
+            content: '\
+              <div class="popup">\
+                <div class="page">\
+                  <div class="navbar">\
+                    <div class="navbar-inner">\
+                      <div class="title">Dynamic Popup</div>\
+                      <div class="right"><a href="#" class="link popup-close">Close</a></div>\
+                    </div>\
+                  </div>\
+                  <div class="page-content">\
+                    <div class="block">\
+                      <p>This popup was created dynamically</p>\
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim. Suspendisse non nisl semper tellus malesuada suscipit eu et eros. Nulla eu enim quis quam elementum vulputate. Mauris ornare consequat nunc viverra pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed libero mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor. Suspendisse a faucibus lectus.</p>\
+                    </div>\
+                  </div>\
+                </div>\
+              </div>\
+            '
+          });
+        }
+        // Open it
+        self.popup.open();
+      },
+    },
+    on: {
+      pageBeforeRemove: function () {
+        var self = this;
+        // Destroy popup when page removed
+        if (self.popup) self.popup.destroy();
+      },
+    }
+  }
+</script>

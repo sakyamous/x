@@ -1,0 +1,165 @@
+<template>
+  <div class="page">
+    <div class="toolbar tabbar no-shadow toolbar-bottom-md tabbar-labels">
+      <div class="toolbar-inner">
+       <a href="/dashboard/" class="tab-link">
+          <i class="icon material-icons">home</i>
+          <span class="tabbar-label">Home</span>
+        </a>
+        <a href="/features/" class="tab-link tab-link-active">
+          <i class="material-icons">star</i>
+          <span class="tabbar-label">Features</span>
+        </a>
+        <a href="/page/" class="tab-link">
+          <i class="icon material-icons">favorite</i>
+          <span class="tabbar-label">Pages</span>
+        </a>
+        <a href="/search-page/" class="tab-link">
+          <i class="icon material-icons">search</i>
+          <span class="tabbar-label">Search</span>
+        </a>
+        <a href="/settings/" class="tab-link">
+          <i class="icon material-icons">settings</i>
+          <span class="tabbar-label">Settings</span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar no-shadow">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Features</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <!-- Start Content -->
+      <div id="tab-2" class="page-contents features tab tab-active">
+        <div class="block">
+          <div class="row row-1">
+            <div class="col-100 medium-50">
+              <div class="card">
+                <div class="card-content card-content-padding">
+                  <span>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsa iusto voluptatum voluptatibus facere fuga qui nisi officia ex, expedita vitae at voluptas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-2">
+            <div class="col-100 medium-50">
+              <a href="" @click="openDemo2">
+                <button class="btn">action modal available here</button>
+              </a>
+            </div>
+          </div>
+          <div class="row row-1">
+            <div class="col-100 medium-50">
+              <div class="card">
+                <div class="card-content card-content-padding">
+                  <h2>Action Sheets Styles</h2>
+                  <span>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsa iusto voluptatum voluptatibus facere fuga qui nisi officia ex, expedita vitae at voluptas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-1">
+            <div class="col-100 medium-50">
+              <div class="card">
+                <div class="card-content card-content-padding">
+                  <span>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Ipsa iusto voluptatum voluptatibus facere fuga qui nisi officia ex, expedita vitae at voluptas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Content -->
+    </div>
+  </div>
+</template>
+<script>
+return {
+  methods: {
+    openDemo2: function () {
+      var self = this;
+      self.actions2.open();
+    },
+    openGrid: function () {
+      var self = this;
+      self.actionsGrid.open();
+    },
+    openActionsPopover: function () {
+      var self = this;
+      self.actionsToPopover.open();
+    },
+  },
+  on: {
+    pageBeforeRemove() {
+      var self = this;
+      self.actions1.destroy();
+      self.actions2.destroy();
+      self.actionsGrid.destroy();
+      self.actionsToPopover.destroy();
+    },
+    pageInit: function(page) {
+      var self = this;
+
+      // 1 Group
+      var buttons1 = [
+        {
+          text: 'Do something',
+          label: true
+        },
+        {
+          text: 'Button 1',
+          bold: true
+        },
+        {
+          text: 'Button 2',
+        },
+        {
+          text: 'Cancel',
+          color: 'red'
+        },
+      ];
+
+      // 2 Groups
+      var buttons2 = [
+        // First Group
+        [
+          {
+            text: 'Paralax Effect',
+            bold: true,
+            size: 25
+          },
+          {
+            text: '<p>Action Sheets Modal</p>',
+            bold: true
+          },
+        ],
+        // Second Group
+        [
+          {
+            text: 'Cancel',
+            color: 'red'
+          }
+        ]
+      ]
+
+      self.actions1 = self.$app.actions.create({buttons: buttons1});
+      self.actions2 = self.$app.actions.create({buttons: buttons2});
+      self.actionsGrid = self.$app.actions.create({buttons: gridButtons, grid: true});
+
+      // Actions To Popover
+      self.actionsToPopover = self.$app.actions.create({
+        buttons: buttons1,
+        // Need to specify popover target
+        targetEl: self.$el.find('.button-to-popover')
+      });
+    }
+  }
+}
+</script>

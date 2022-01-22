@@ -1,0 +1,137 @@
+<template>
+  <div class="page">
+    <div class="toolbar tabbar no-shadow toolbar-bottom-md tabbar-labels">
+      <div class="toolbar-inner">
+        <a href="/dashboard/" class="tab-link">
+          <i class="icon material-icons">home
+          </i>
+          <span class="tabbar-label">Home
+          </span>
+        </a>
+        <a href="/product/" class="tab-link">
+          <i class="icon material-icons">shopping_basket
+          </i>
+          <span class="tabbar-label">Produk
+          </span>
+        </a>
+        <a href="/cart/" class="tab-link tab-link-active">
+          <i class="material-icons">shopping_cart
+          </i>
+          <span class="tabbar-label">Keranjang
+          </span>
+        </a>
+        <a href="/history/" class="tab-link">
+          <i class="icon material-icons">import_contacts
+          </i>
+          <span class="tabbar-label">Riwayat
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar no-shadow">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="android-only">Keranjang
+            </span>
+          </a>
+        </div>
+        <!-- <div class="title">Produk
+        </div> -->
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block">
+        <div class="bg-primary block header-bg">
+          <div class="row d-block">
+            <h1 class="opacity-80" style="padding:10px 0">Explore</h1>
+            <span class="text mb-1">Temukan Tas dan Dompet Favorit Kamu</span>
+          </div>
+          <div class="row">
+            <div class="section search-section" style="width:100%; margin-top:20px">
+              <div class="section-content">
+                <form class="searchbar" style="height: 50px; margin:0;border-radius:6px;width:100%">
+                  <div class="searchbar-input-wrap">
+                    <input placeholder="Apa yang kamu cari ?" class="" type="search">
+                    <i class="searchbar-icon">
+                    </i>
+                    <span class="input-clear-button">
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row item-row-space">
+          <h2 >Keranjang Kamu</h2>
+        </div>
+        <div class="card data-table" style="margin:0">
+          <table>
+            <thead>
+              <tr>
+                <th class="label-cell">Nama Produk</th>
+                <th class="numeric-cell">Quantity</th>
+                <th class="numeric-cell">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="label-cell">Tas Slempang Pria</td>
+                <td class="numeric-cell">2</td>
+                <td class="numeric-cell">
+                  <a href="">Detail</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell">Tas Wanita Branded Warna Biru</td>
+                <td class="numeric-cell">1</td>
+                <td class="numeric-cell">
+                  <a href="">Detail</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell">Dompet Pria Bahan Kulit</td>
+                <td class="numeric-cell">4</td>
+                <td class="numeric-cell">
+                  <a href="">Detail</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="label-cell">Dompet Wanita Ekslusif</td>
+                <td class="numeric-cell">2</td>
+                <td class="numeric-cell">
+                  <a href="">Detail</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row mt-2 box">
+          <div class="left">
+            <span>Jumlah Item</span>
+          </div>
+          <div class="right">
+            <span>9</span>
+          </div>
+        </div>
+        <div class="row mt-2 box">
+          <div class="left">
+            <span>Subtotal</span>
+          </div>
+          <div class="right">
+            <span>Rp. 400,000</span>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-100">
+            <a href="/dashboard/">
+              <button class="my-btn">Lanjut Belanja</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
